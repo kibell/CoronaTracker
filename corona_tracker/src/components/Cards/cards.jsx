@@ -8,8 +8,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
-
+import countUp from 'react-countup'
 import styles from './Cards.modules.css'
+import CountUp from 'react-countup';
 
 
 const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate} }) => {
@@ -24,7 +25,15 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate} }) => {
             <Grid item component ={Card}>
                 <CardContent>
                     <Typography color="textSecondary">Infected </Typography>
-                    <Typography variant="h5"> {confirmed.value} </Typography>
+                    <Typography variant="h5">
+                        <CountUp
+                        start = {0}
+                        end={confirmed.value}
+                        duration={2.5}
+                        separator=","
+                         /> 
+                         
+                         </Typography>
                     <Typography>Real Date</Typography>
                     <Typography>Number of Active Cases of Covid</Typography>
                 </CardContent>
