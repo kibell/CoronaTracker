@@ -27,6 +27,7 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate} }) => {
                     <Typography>Real Date</Typography>
                     <Typography>Number of Active Cases of Covid</Typography>
                 </CardContent>
+                
 
             </Grid>
 
