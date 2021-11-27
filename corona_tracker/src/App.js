@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import {Cards, Chart, Picker} from './components'
+import {Cards, Chart, Picker,Jumbo} from './components'
 import styles from './components/App.Module.css'
 import './App.css';
 import { fetchData } from './api/index'
@@ -30,15 +30,18 @@ state = {
     const { data, country } = this.state
 
       return(
+        <>
         <div className={styles.container}>
+       
+          <Jumbo/>
           <h1>
             <Cards data={data} />
             <Picker handleCountryChange={this.handleCountryChange} />
-            <Chart data={data} country={country}   />
+            <Chart data={data} country={country} />
           </h1>
 
         </div>
-
+</>
       )
 
 
