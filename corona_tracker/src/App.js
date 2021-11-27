@@ -9,6 +9,7 @@ import { fetchData } from './api/index'
 class App extends React.Component{
 state = {
   data: {},
+  country: '',
 
 }
 
@@ -18,6 +19,11 @@ state = {
    this.setState({data:fetchedData})
  }
 
+ //setting a variable equal to the property country I added
+ handleCountryChange = async (country) => {
+console.log(country)
+
+ }
   render(){
     const { data } = this.state
 
@@ -25,7 +31,7 @@ state = {
         <div className={styles.container}>
           <h1>
             <Cards data={data} />
-            <Picker />
+            <Picker handleCountryChange={this.handleCountryChange} />
             <Chart />
           </h1>
 
