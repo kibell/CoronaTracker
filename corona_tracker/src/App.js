@@ -21,18 +21,20 @@ state = {
 
  //setting a variable equal to the property country I added
  handleCountryChange = async (country) => {
-console.log(country)
+  const fetchedData = await fetchData(country);
+  console.log(fetchedData)
+  this.setState({data:fetchedData, country:country})
 
  }
   render(){
-    const { data } = this.state
+    const { data, country } = this.state
 
       return(
         <div className={styles.container}>
           <h1>
             <Cards data={data} />
             <Picker handleCountryChange={this.handleCountryChange} />
-            <Chart />
+            <Chart data={data} country={country}   />
           </h1>
 
         </div>
